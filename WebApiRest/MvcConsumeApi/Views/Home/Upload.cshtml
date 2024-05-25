@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Upload" asp-controller="Home" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="mt-3">
+            <label>Dosya Seçiniz</label>
+            <input type="file" name="file" />
+        </div>
+        <div class="mt-3">
+            <a asp-action="Index" asp-controller="Home">Geri Dön</a>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
+
+</form>
+

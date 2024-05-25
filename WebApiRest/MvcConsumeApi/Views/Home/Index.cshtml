@@ -1,0 +1,40 @@
+﻿@model List<MvcConsumeApi.ResponseModel.ProductResponseModel> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <p>MVC Works</p>
+    <a asp-action="Create" asp-controller="Home">Ürün Ekle</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ürün Adı</th>
+                <th>Stok</th>
+                <th>Fiyat</th>
+                <th>Tarih</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Stock</td>
+                    <td>@item.Price</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.ImagePath</td>
+                    <td><a asp-action="Update" asp-controller="Home" asp-route-id="@item.Id" >Güncelle</a></td>
+                    <td><a asp-action="Remove" asp-controller="Home" asp-route-id="@item.Id" >Sil</a></td>
+                </tr>
+            }
+
+        </tbody>
+       
+    </table>
+
+</body>
+</html>
